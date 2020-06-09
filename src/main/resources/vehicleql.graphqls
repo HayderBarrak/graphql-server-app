@@ -5,15 +5,23 @@ type Vehicle {
 	brandName: String,
 	launchDate: String
 }
+input UpdateVehicleInput {
+	id: ID!
+	type: String
+	modelCode: String,
+	brandName: String
+}
 
 
 type Query {
 	vehicles(count: Int):[Vehicle]
 	vehicle(id: ID):Vehicle
 	getVehicleByBrand(brandName: String):[Vehicle]
+	getAllVehicles:[Vehicle]
 }
 
 type Mutation {
 	createVehicle(type: String!, modelCode: String!, brandName: String, launchDate: String):Vehicle
+	updateVehicle(input: UpdateVehicleInput):Vehicle
 	deleteVehicle(id: ID):Int
 }
