@@ -27,23 +27,24 @@ public class VehicleService {
         vehicle.setLaunchDate(LocalDate.parse(launchDate));
         return this.vehicleRepository.save(vehicle);
     }
-    @Transactional(readOnly = true)
+    @Transactional
     public List<Vehicle> getAllVehicles(final int count) {
         return this.vehicleRepository.findAll().stream().limit(count).collect(Collectors.toList());
     }
-    @Transactional(readOnly = true)
+
+    @Transactional
     public Optional<Vehicle> getVehicle(final int id) {
         return this.vehicleRepository.findById(id);
     }
 
-    @Transactional(readOnly = true)
-    public void deleteVehicle(int id) {
+    public int deleteVehicle(int id) {
         this.vehicleRepository.deleteById(id);
+        return id;
     }
 
-      @Transactional(readOnly = true)
+    @Transactional
     public List<Vehicle> getVehicleByName(String brand) {
-       return this.vehicleRepository.getByBrandName(brand);
+        return this.vehicleRepository.getByBrandName(brand);
     }
 
 }
