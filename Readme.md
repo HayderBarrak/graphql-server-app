@@ -1,5 +1,6 @@
+#GraphSpringApp
 
-####Create
+#### Create
 mutation {
   createVehicle(type: "car", modelCode: "XYZ0192", brandName: "XYZ", launchDate: "2016-08-16") 
   {
@@ -7,7 +8,7 @@ mutation {
   }
 }
 --------------------------
-####update
+#### update
 mutation update($input: UpdateVehicleInput){
   updateVehicle(input:$input){
     id,
@@ -17,7 +18,7 @@ mutation update($input: UpdateVehicleInput){
   }
 }
 
-####input update (query variable)
+#### input update (query variable)
 {
   "input": {
     "id": 2,
@@ -28,7 +29,7 @@ mutation update($input: UpdateVehicleInput){
 }
 
 ---------------------------
-####query getall()
+#### query getall()
 query getall {
  getAllVehicles{
   id,
@@ -37,7 +38,7 @@ query getall {
 }
 }
 --------------------------
-####get ById()
+#### get ById()
 query getVehicleById{
   vehicle(id: 2) 
   {
@@ -47,7 +48,7 @@ query getVehicleById{
 	}
 }
 ------------------
-####count
+#### count
 {
   vehicles(count: 5) {
     id
@@ -56,15 +57,21 @@ query getVehicleById{
   }
 }
 ----------------------------
-####Delete
+#### Delete
 mutation {
   deleteVehicle(id:2)
 }
 --------------------
-####getByName
+#### getByName
 query getByName {
   getVehicleByBrand(brandName: "XYZ"){
     id,
     type
   }
 }
+-------------------------
+#### Links
+
+https://dimitr.im/graphql-mutations-spring
+
+https://itnext.io/beginners-guide-to-graphql-with-spring-boot-69d229e87b19
