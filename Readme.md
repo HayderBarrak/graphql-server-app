@@ -1,5 +1,5 @@
 # GraphSpringApp
-
+http://localhost:8080/graphiql
 #### Create
 mutation {
   createVehicle(type: "car", modelCode: "XYZ0192", brandName: "XYZ", launchDate: "2016-08-16") 
