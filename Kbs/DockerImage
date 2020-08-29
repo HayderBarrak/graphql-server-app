@@ -1,0 +1,13 @@
+
+mvn clen package (take jar)
+
+docker build -t hayder94/graphql-app:1.0-SNAPSHOT .
+
+
+docker run -p 8080:8080 hayder94/graphql-app:1.0-SNAPSHOT
+
+
+docker tag 44003d983452 hayder94/graphql-app:latest
+
+
+docker push hayder94/graphql-app:latest

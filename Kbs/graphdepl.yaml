@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graph-deployment
+
+spec:
+  template:
+    metadata:
+      name: graph-pod
+      labels:
+        app: myapp
+        type: graph-app
+    spec:
+      containers:
+        - name: graphcont
+          image: hayder94/graphql-app:1.2
+          ports:
+            - containerPort: 8080
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+      type: graph-app
